@@ -2,6 +2,7 @@
   box-sizing: border-box;
   border: 0px;
   padding: 0px;
+  margin: 0px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -9,6 +10,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin: 1rem;
 }
 
 .nav-container {
