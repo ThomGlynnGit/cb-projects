@@ -20,6 +20,18 @@ export default {
       title: "production",
       template: "./src/pages/index.html",
     }),
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: "./src/pages/about.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "projects.html",
+      template: "./src/pages/projects.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "contact.html",
+      template: "./src/pages/contact.html",
+    }),
   ],
   module: {
     rules: [
