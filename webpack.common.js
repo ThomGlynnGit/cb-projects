@@ -1,6 +1,7 @@
 // webpack.config.js
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default {
   entry: {
@@ -13,7 +14,7 @@ export default {
   },
   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/index.html"],
+    watchFiles: ["./src/pages/*.html"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -32,12 +33,15 @@ export default {
       filename: "contact.html",
       template: "./src/pages/contact.html",
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
