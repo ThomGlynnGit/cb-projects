@@ -18,7 +18,7 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       title: "production",
-      template: "./src/index.html",
+      template: "./src/pages/index.html",
     }),
   ],
   module: {
