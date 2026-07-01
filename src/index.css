@@ -57,26 +57,49 @@ a {
 /* Home banners */
 
 .banner-img {
-  width: 500px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: 0 0;
 }
 
 .img-container {
-  width: 500px;
-  height: 200px;
+  width: 60%;
+  aspect-ratio: 5 / 2;
   overflow: hidden;
+  min-width: 60%;
+  max-height: 300px;
 }
 
 .banner-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
 }
 
 .ban-txt-container {
-  width: 300px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 3rem;
+}
+
+.banner-text {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 900px) {
+  .banner-container {
+    flex-wrap: wrap;
+  }
+
+  .img-container,
+  .ban-txt-container {
+    width: 100%;
+  }
+
+  .ban-txt-container {
+    margin-top: 2rem;
+  }
 }
