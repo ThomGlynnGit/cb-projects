@@ -100,6 +100,8 @@ a {
   font-size: 1.3rem;
 }
 
+/* Mobile site styles */
+
 @media (max-width: 900px) {
   .banner-container,
   .display-container {
@@ -124,6 +126,11 @@ a {
   .content-container {
     gap: 30px;
   }
+
+  .footer-text-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 /* Display images */
@@ -142,4 +149,22 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: 0 0;
+}
+
+/* Footer */
+
+.footer-text-container {
+  text-align: center;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-text-head {
+  font-size: 1.5rem;
+}
+
+.footer-text {
+  font-size: 1.3rem;
 }
