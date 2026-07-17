@@ -6,6 +6,28 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+/* text styles */
+
+.para-small {
+  font-size: 1.1rem;
+}
+
+.para-mid {
+  font-size: 1.3rem;
+}
+
+.head-mid {
+  font-size: 1.5rem;
+}
+
+.footer-text {
+  font-size: 1.3rem;
+}
+
+.list-small > * {
+  font-size: 1.2rem;
+}
+
 /* Header */
 
 .head-container {
@@ -96,10 +118,6 @@ a {
   padding: 3rem;
 }
 
-.para-small {
-  font-size: 1.3rem;
-}
-
 /* Mobile site styles */
 
 @media (max-width: 900px) {
@@ -159,14 +177,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.text-head {
-  font-size: 1.5rem;
-}
-
-.footer-text {
-  font-size: 1.3rem;
 }
 
 .address-bar {

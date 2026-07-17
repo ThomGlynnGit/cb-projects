@@ -25,7 +25,3 @@
 .list-small {
   padding-left: 2rem;
 }
-
-.list-small > * {
-  font-size: 1.2rem;
-}
