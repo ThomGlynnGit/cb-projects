@@ -39,8 +39,10 @@ export function RenderProjects() {
     grid.innerHTML += `
     <article class="project-card">
       <img src="${project.image}" alt="${project.title}">
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
+      <div class="project-text">
+        <h3 class="head-small">${project.title}</h3>
+        <p class="list-small">${project.description}</p>
+        </div>
     </article>
   `;
   });
