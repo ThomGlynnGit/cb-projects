@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default {
   entry: {
-    app: "./src/index.js",
+    app: "./src/js/index.js",
   },
   output: {
     filename: "main.js",
