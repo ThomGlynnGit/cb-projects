@@ -26,3 +26,7 @@
   justify-content: space-between;
   gap: 5px;
 }
+
+.project-text > .list-small {
+  text-align: right;
+}
