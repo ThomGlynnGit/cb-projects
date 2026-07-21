@@ -37,6 +37,23 @@
   gap: 1.4rem;
 }
 
+.project-card {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card img {
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover img {
+  opacity: 0.75;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
