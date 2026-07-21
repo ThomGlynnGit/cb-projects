@@ -65,3 +65,88 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Project pages */
+
+.project-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.project-hero {
+  width: 100%;
+}
+
+.project-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-header h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.project-overview,
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.project-back {
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .project-container {
+    gap: 40px;
+  }
+
+  .project-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
