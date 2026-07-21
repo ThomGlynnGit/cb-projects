@@ -33,6 +33,26 @@ export default {
       filename: "contact.html",
       template: "./src/pages/contact.html",
     }),
+    new HtmlWebpackPlugin({
+      filename: "projects/birmingham.html",
+      template: "./src/pages/projects/birmingham.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "projects/brighton.html",
+      template: "./src/pages/projects/brighton.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "projects/london.html",
+      template: "./src/pages/projects/london.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "projects/manchester.html",
+      template: "./src/pages/projects/manchester.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "projects/newcastle.html",
+      template: "./src/pages/projects/newcastle.html",
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
