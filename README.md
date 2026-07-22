@@ -1,3 +1,3 @@
-# webpack-template
+# cb-projects
 
-A template for webpack based repositories.
+A portfolio website for a structural engineer.
