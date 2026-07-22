@@ -149,6 +149,30 @@ a {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+
+  .head-container {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-container {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-buttons {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem 1.2rem;
+    width: auto;
+  }
+
+  .nav-btn {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
 }
 
 /* Display images */
