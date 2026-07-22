@@ -137,6 +137,26 @@
   text-decoration: none;
 }
 
+[data-fs-error],
+[data-fs-success] {
+  display: none;
+}
+
+[data-fs-error][data-fs-active],
+[data-fs-success][data-fs-active] {
+  display: block;
+}
+
+.field-error,
+.form-error {
+  color: #a00000;
+  font-size: 0.9rem;
+}
+
+.form-success {
+  font-size: 1rem;
+}
+
 @media (max-width: 900px) {
   .project-container {
     gap: 40px;
