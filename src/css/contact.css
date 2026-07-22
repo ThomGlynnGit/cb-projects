@@ -1,0 +1,100 @@
+/* Contact form */
+
+.contact-container {
+  padding: 0 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-head-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-head-container h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-size: 1rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
+.form-submit {
+  width: fit-content;
+  padding: 12px 24px;
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-submit:hover {
+  background-color: white;
+  color: black;
+}
+
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-success {
+  font-size: 1rem;
+}
+
+.form-error,
+.field-error {
+  color: #a00000;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    gap: 20px;
+  }
+
+  .contact-head-container h1 {
+    font-size: 1.75rem;
+  }
+
+  .form-submit {
+    width: 100%;
+  }
+}
