@@ -40,13 +40,14 @@ const projects = [
 export function RenderProjects() {
   const grid = document.querySelector(".projects-grid");
 
-  projects.forEach((project) => {
-    const card = document.createElement("a");
+  if (grid) {
+    projects.forEach((project) => {
+      const card = document.createElement("a");
 
-    card.classList.add("project-card");
-    card.href = project.page;
+      card.classList.add("project-card");
+      card.href = project.page;
 
-    card.innerHTML = `
+      card.innerHTML = `
         <img src="${project.image}" alt="${project.title}">
   
         <div class="project-text">
@@ -56,6 +57,7 @@ export function RenderProjects() {
         
     `;
 
-    grid.appendChild(card);
-  });
+      grid.appendChild(card);
+    });
+  }
 }
