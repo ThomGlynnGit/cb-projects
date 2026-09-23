@@ -1,0 +1,30 @@
+/* Services */
+
+.services-container {
+  padding: 0 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.services-head-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 800px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px;
+  padding-top: 20px;
+  border-top: 1px solid black;
+}
+
+@media (max-width: 900px) {
+  .services-container {
+    gap: 30px;
+  }
+}

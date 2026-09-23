@@ -8,6 +8,11 @@
 
 /* text styles */
 
+.page-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
 .para-small {
   font-size: 1.1rem;
 }

@@ -7,6 +7,16 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 const pagesDir = path.resolve(import.meta.dirname, "src/pages");
 const partialsDir = path.resolve(import.meta.dirname, "src/partials");
 
+const pages = [
+  "index",
+  "about",
+  "approach",
+  "services",
+  "works",
+  "sketchbook",
+  "contact",
+];
+
 // Replaces <!-- include: name --> with src/partials/name.html, and {{root}}
 // with the relative path from the page back to the site root.
 function includePartials(content, loaderContext) {
@@ -39,21 +49,13 @@ export default {
     watchFiles: ["./src/**/*.html"],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/pages/index.html",
-    }),
-    new HtmlWebpackPlugin({
-      filename: "about.html",
-      template: "./src/pages/about.html",
-    }),
-    new HtmlWebpackPlugin({
-      filename: "projects.html",
-      template: "./src/pages/projects.html",
-    }),
-    new HtmlWebpackPlugin({
-      filename: "contact.html",
-      template: "./src/pages/contact.html",
-    }),
+    ...pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          filename: `${page}.html`,
+          template: `./src/pages/${page}.html`,
+        }),
+    ),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),

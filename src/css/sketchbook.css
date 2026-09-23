@@ -1,0 +1,15 @@
+/* Sketchbook */
+
+.sketchbook-container {
+  padding: 0 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.sketchbook-head-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 800px;
+}
