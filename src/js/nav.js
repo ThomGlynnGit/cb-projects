@@ -1,6 +1,31 @@
+// "/" and "/index.html" are the same page, but the browser treats them as
+// different addresses and reloads when a link switches between them.
+const pagePath = (url) => url.pathname.replace(/index\.html$/, "");
+
+// Makes links to a section of the current page (e.g. About's
+// "index.html#about" while on "/") scroll there instead of reloading.
+function initSectionLinks() {
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a[href*='#']");
+    // Leave new-tab clicks (ctrl/cmd/shift/middle) to the browser
+    if (!link || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey) {
+      return;
+    }
+
+    const url = new URL(link.href);
+    const section = document.getElementById(url.hash.slice(1));
+    if (pagePath(url) !== pagePath(location) || !section) return;
+
+    e.preventDefault();
+    history.pushState(null, "", url.hash);
+    // Uses the CSS scroll-behavior and scroll-padding-top
+    section.scrollIntoView();
+  });
+}
+
 // Opens and closes the mobile menu. CSS shows/hides the menu from the
 // button's aria-expanded state.
-export function initNav() {
+function initMenu() {
   const toggle = document.querySelector(".nav-menu-toggle");
 
   if (!toggle) return;
@@ -26,4 +51,9 @@ export function initNav() {
       toggle.focus();
     }
   });
+}
+
+export function initNav() {
+  initSectionLinks();
+  initMenu();
 }
