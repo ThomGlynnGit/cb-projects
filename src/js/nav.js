@@ -17,9 +17,22 @@ function initSectionLinks() {
     if (pagePath(url) !== pagePath(location) || !section) return;
 
     e.preventDefault();
-    history.pushState(null, "", url.hash);
     // Uses the CSS scroll-behavior and scroll-padding-top
     section.scrollIntoView();
+  });
+}
+
+// Pages always open at the top: the browser doesn't restore an old scroll
+// position, and after jumping to a section from another page (e.g.
+// index.html#about) the #about is removed so reloading starts at the top.
+function initScrollReset() {
+  history.scrollRestoration = "manual";
+
+  // Wait until the browser has jumped to the section before removing it
+  addEventListener("load", () => {
+    if (location.hash) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
   });
 }
 
@@ -54,6 +67,7 @@ function initMenu() {
 }
 
 export function initNav() {
+  initScrollReset();
   initSectionLinks();
   initMenu();
 }
