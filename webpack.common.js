@@ -1,7 +1,29 @@
 // webpack.config.js
+import fs from "node:fs";
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
+const pagesDir = path.resolve(import.meta.dirname, "src/pages");
+const partialsDir = path.resolve(import.meta.dirname, "src/partials");
+
+// Replaces <!-- include: name --> with src/partials/name.html, and {{root}}
+// with the relative path from the page back to the site root.
+function includePartials(content, loaderContext) {
+  const depth = path
+    .relative(pagesDir, path.dirname(loaderContext.resourcePath))
+    .split(path.sep)
+    .filter(Boolean).length;
+  const root = depth ? "../".repeat(depth) : "./";
+
+  return content
+    .replace(/<!--\s*include:\s*([\w-]+)\s*-->/g, (_, name) => {
+      const file = path.join(partialsDir, `${name}.html`);
+      loaderContext.addDependency(file);
+      return fs.readFileSync(file, "utf8");
+    })
+    .replaceAll("{{root}}", root);
+}
 
 export default {
   entry: {
@@ -14,11 +36,10 @@ export default {
   },
   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/pages/*.html"],
+    watchFiles: ["./src/**/*.html"],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "production",
       template: "./src/pages/index.html",
     }),
     new HtmlWebpackPlugin({
@@ -50,6 +71,9 @@ export default {
       {
         test: /\.html$/i,
         loader: "html-loader",
+        options: {
+          preprocessor: includePartials,
+        },
       },
     ],
   },
