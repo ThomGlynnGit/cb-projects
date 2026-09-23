@@ -1,8 +1,13 @@
 import js from "@eslint/js";
 import globals from "globals";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
+  globalIgnores(["dist/"]),
+  {
+    files: ["webpack.*.js"],
+    languageOptions: { globals: globals.node },
+  },
   {
     files: ["**/*.{js,mjs,cjs}"],
     plugins: { js },
