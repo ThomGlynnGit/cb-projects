@@ -1,3 +1,11 @@
+:root {
+  --page-background: #fefbf6;
+}
+
+body {
+  background-color: var(--page-background);
+}
+
 * {
   box-sizing: border-box;
   border: 0px;
@@ -56,7 +64,7 @@ html {
   display: flex;
   justify-content: center;
   padding: 1rem 1.4rem;
-  background-color: white;
+  background-color: var(--page-background);
   position: fixed;
   width: 100%;
   top: 0;
@@ -196,7 +204,7 @@ a {
     flex-direction: column;
     gap: 1.2rem;
     padding: 1rem 1rem 1.5rem;
-    background-color: white;
+    background-color: var(--page-background);
     border-bottom: 1px solid black;
   }
 
