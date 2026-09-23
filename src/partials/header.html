@@ -1,14 +1,25 @@
 <div class="head-container">
-  <div class="nav-container">
-    <h3 class="logo">CB<br />Projects</h3>
-    <div class="nav-buttons">
-      <a href="{{root}}index.html" class="nav-btn">Home</a>
-      <a href="{{root}}about.html" class="nav-btn">About</a>
-      <a href="{{root}}approach.html" class="nav-btn">Approach</a>
-      <a href="{{root}}services.html" class="nav-btn">Services</a>
-      <a href="{{root}}works.html" class="nav-btn">Selected Works</a>
-      <a href="{{root}}sketchbook.html" class="nav-btn">Sketchbook</a>
-      <a href="{{root}}contact.html" class="nav-btn">Contact</a>
-    </div>
-  </div>
+  <nav class="nav-container" aria-label="Main">
+    <a href="{{root}}index.html" class="logo">CB<br />Projects</a>
+    <ul class="nav-buttons">
+      <li class="nav-dropdown">
+        <button
+          type="button"
+          class="nav-btn nav-dropdown-toggle"
+          aria-expanded="false"
+          aria-controls="practice-menu"
+        >
+          Practice
+        </button>
+        <ul class="nav-dropdown-menu" id="practice-menu">
+          <li><a href="{{root}}about.html" class="nav-btn">About</a></li>
+          <li><a href="{{root}}approach.html" class="nav-btn">Approach</a></li>
+        </ul>
+      </li>
+      <li><a href="{{root}}services.html" class="nav-btn">Services</a></li>
+      <li><a href="{{root}}works.html" class="nav-btn">Selected Works</a></li>
+      <li><a href="{{root}}sketchbook.html" class="nav-btn">Sketchbook</a></li>
+      <li><a href="{{root}}contact.html" class="nav-btn">Contact</a></li>
+    </ul>
+  </nav>
 </div>

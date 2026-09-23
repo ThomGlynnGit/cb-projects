@@ -62,10 +62,12 @@
   justify-content: center;
   width: max-content;
   gap: 3rem;
+  list-style: none;
 }
 
-.nav-container > h3 {
-  justify-self: flex-start;
+.logo {
+  font-size: 1.17rem;
+  font-weight: bold;
 }
 
 .nav-btn {
@@ -73,12 +75,51 @@
   width: fit-content;
   white-space: nowrap;
   font-size: 1rem;
+  color: black;
+  cursor: pointer;
 }
 
-.nav-buttons > a:hover {
+.nav-btn:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
+}
+
+/* Practice dropdown */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.4rem;
+  border: 0.3rem solid transparent;
+  border-top-color: currentColor;
+  vertical-align: 0.05rem;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+  background-color: white;
+  list-style: none;
+}
+
+.nav-dropdown-toggle[aria-expanded="true"] + .nav-dropdown-menu {
+  display: flex;
+}
+
+@media (hover: hover) {
+  .nav-dropdown:hover .nav-dropdown-menu {
+    display: flex;
+  }
 }
 
 a {
