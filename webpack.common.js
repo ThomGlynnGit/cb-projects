@@ -56,6 +56,10 @@ export default {
         type: "asset/resource",
       },
       {
+        test: /\.woff2$/i,
+        type: "asset/resource",
+      },
+      {
         test: /\.html$/i,
         loader: "html-loader",
         options: {
