@@ -182,6 +182,12 @@ a {
   text-decoration: none;
 }
 
+/* Links within body text */
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .content-container {
   padding-top: 80px; /* accounts for fixed header */
   display: flex;

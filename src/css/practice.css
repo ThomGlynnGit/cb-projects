@@ -21,6 +21,12 @@
   line-height: 1.35;
 }
 
+.practice-quote {
+  padding-left: 1rem;
+  border-left: 2px solid var(--text-colour);
+  font-size: 1.3rem;
+}
+
 .practice-heading {
   font-size: 1rem;
   font-weight: 400;
