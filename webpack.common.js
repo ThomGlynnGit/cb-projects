@@ -1,5 +1,6 @@
 // webpack.config.js
 import path from "node:path";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { loadWorks } from "./tools/content.js";
@@ -44,6 +45,10 @@ export default {
           template: `./src/pages/works/_template.html?slug=${slug}`,
         }),
     ),
+    // The CMS admin is copied as-is, without the site's CSS/JS
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/admin", to: "admin" }],
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
@@ -55,7 +60,7 @@ export default {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
       },
       {

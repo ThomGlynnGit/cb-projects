@@ -1,0 +1,115 @@
+# Sveltia CMS configuration: https://sveltiacms.app/en/docs
+# Fields and file locations here must match what tools/content.js and
+# tools/templating.js read when the site is built.
+
+backend:
+  name: github
+  repo: ThomGlynnGit/cb-projects
+  branch: main
+
+# Uploads are committed to src/images/uploads/ and stored in content files as
+# "/images/uploads/<file>", which the build resolves from src/.
+media_folder: src/images/uploads
+public_folder: /images/uploads
+
+media_libraries:
+  all:
+    slugify_filename: true
+    # Convert photos to WebP and cap their size in the browser before upload
+    transformations:
+      raster_image:
+        format: webp
+        quality: 85
+        width: 2400
+        height: 2400
+
+collections:
+  - name: works
+    label: Selected Works
+    label_singular: Project
+    description: Projects shown on the Selected Works page, newest year first.
+    folder: content/works
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} ({{year}})"
+    thumbnail: image
+    sortable_fields: [title, year]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Summary
+        name: summary
+        widget: string
+        hint: One line shown on the project card and under the page title.
+      - label: Main image
+        name: image
+        widget: image
+        hint: Shown on the project card and at the top of the project page.
+      - label: Year
+        name: year
+        widget: string
+        pattern: ["^\\d{4}$", "Enter a four-digit year, e.g. 2025"]
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Client, name: client, widget: string, required: false }
+      - { label: Architect, name: architect, widget: string, required: false }
+      - { label: Sector, name: sector, widget: string, required: false }
+      - label: Overview
+        name: overview
+        widget: text
+        required: false
+        hint: Leave a blank line between paragraphs.
+      - label: Project details
+        name: details
+        widget: text
+        required: false
+        hint: Leave a blank line between paragraphs.
+      - label: Gallery
+        name: gallery
+        widget: list
+        required: false
+        field: { label: Image, name: image, widget: image }
+
+  - name: sketchbook
+    label: Sketchbook
+    label_singular: Sketch
+    description: Sketches shown on the Sketchbook page, lowest order number first.
+    folder: content/sketchbook
+    format: json
+    create: true
+    delete: true
+    slug: "sketch-{{year}}{{month}}{{day}}-{{uuid_shorter}}"
+    identifier_field: caption
+    summary: "{{order}}. {{caption}}"
+    thumbnail: image
+    sortable_fields: [order, caption]
+    fields:
+      - { label: Image, name: image, widget: image }
+      - { label: Caption, name: caption, widget: string, required: false }
+      - label: Order
+        name: order
+        widget: number
+        value_type: int
+        required: false
+        hint: Lower numbers appear first. Sketches without a number go last.
+
+  - name: settings
+    label: Site settings
+    files:
+      - name: settings
+        label: Site settings
+        file: content/settings.json
+        fields:
+          - { label: Company name, name: name, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Address, name: address, widget: string }
+          - label: Email
+            name: email
+            widget: string
+            pattern: ["^\\S+@\\S+\\.\\S+$", "Enter a valid email address"]
+          - { label: Phone, name: phone, widget: string }
+          - label: Formspree form ID
+            name: formspreeId
+            widget: string
+            hint: From formspree.io. Only change this if the contact form moves to a new Formspree form.
