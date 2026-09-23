@@ -90,9 +90,10 @@ html {
   list-style: none;
 }
 
-.logo {
-  font-size: 1.17rem;
-  font-weight: bold;
+.logo img {
+  display: block;
+  height: 50px;
+  width: auto;
 }
 
 .nav-btn {
@@ -169,7 +170,7 @@ a {
 }
 
 .content-container {
-  padding-top: 80px; /* accounts for fixed header */
+  padding-top: 90px; /* accounts for fixed header */
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -188,6 +189,10 @@ a {
 
   .head-container {
     padding: 0.8rem 1rem;
+  }
+
+  .logo img {
+    height: 40px;
   }
 
   .nav-menu-toggle {
