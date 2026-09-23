@@ -6,6 +6,17 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+/* Stop links to page sections (e.g. #about) landing under the fixed header */
+html {
+  scroll-padding-top: 100px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Hidden visually but still read by screen readers and search engines */
 .visually-hidden {
   position: absolute;
@@ -89,43 +100,6 @@
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
-}
-
-/* Practice dropdown */
-
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown-toggle::after {
-  content: "";
-  display: inline-block;
-  margin-left: 0.4rem;
-  border: 0.3rem solid transparent;
-  border-top-color: currentColor;
-  vertical-align: 0.05rem;
-}
-
-.nav-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: -1rem;
-  flex-direction: column;
-  gap: 0.8rem;
-  padding: 1rem;
-  background-color: white;
-  list-style: none;
-}
-
-.nav-dropdown-toggle[aria-expanded="true"] + .nav-dropdown-menu {
-  display: flex;
-}
-
-@media (hover: hover) and (min-width: 901px) {
-  .nav-dropdown:hover .nav-dropdown-menu {
-    display: flex;
-  }
 }
 
 /* Mobile menu button (hamburger that turns into a cross when open) */
@@ -228,12 +202,6 @@ a {
 
   .nav-btn {
     font-size: 1.1rem;
-  }
-
-  /* Practice expands inline within the panel */
-  .nav-dropdown-menu {
-    position: static;
-    padding: 1rem 0 0 1rem;
   }
 }
 

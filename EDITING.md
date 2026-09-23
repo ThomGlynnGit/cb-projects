@@ -6,7 +6,7 @@ You can update three parts of the website yourself, from any web browser:
 - **Sketchbook**: add, edit or remove sketches
 - **Site settings**: your company name, address, email, phone number and contact form
 
-The other page text (Home, About, Approach and Services) is changed by your web developer. Send them any updates you'd like.
+The other page text (the Practice page and Services) is changed by your web developer. Send them any updates you'd like.
 
 The editor is at:
 

@@ -6,15 +6,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { loadWorks } from "./tools/content.js";
 import { renderPage } from "./tools/templating.js";
 
-const pages = [
-  "index",
-  "about",
-  "approach",
-  "services",
-  "works",
-  "sketchbook",
-  "contact",
-];
+const pages = ["index", "services", "works", "sketchbook", "contact"];
 
 export default {
   entry: {
