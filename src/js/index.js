@@ -1,5 +1,6 @@
 import "../css/index.css";
 import "../css/about.css";
+import "../css/practice.css";
 import "../css/projects.css";
 import "../css/services.css";
 import "../css/sketchbook.css";

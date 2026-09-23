@@ -3,63 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CB-Projects</title>
+    <title>{{ settings.name }} | {{ settings.tagline }}</title>
   </head>
   <body>
     <!-- include: header -->
     <div class="content-container">
-      <div class="banner-container">
-        <div class="img-container">
-          <img
-            class="banner-img"
-            src="../images/home_banner1.jpg"
-            alt="An example engineering project"
-          />
-        </div>
-        <div class="ban-txt-container">
+      <h1 class="visually-hidden">{{ settings.name }}</h1>
+
+      <div class="practice-row">
+        <p class="practice-intro practice-text">
+          Introductory text about CB Projects: who the practice is and the kind
+          of structural design work it does. Around four lines, written large at
+          the top of the page.
+        </p>
+      </div>
+
+      <div class="practice-banner">
+        <img
+          src="../images/home_banner1.jpg"
+          alt="An example engineering project"
+        />
+      </div>
+
+      <section class="practice-row" id="about">
+        <h2 class="practice-heading">About us</h2>
+        <div class="practice-text">
           <p class="para-mid">
-            Banner text 1 - This is some generic welcome text that introduces
-            the company and the website. It has to be around this length to
-            display nicely
+            This text covers the ethos of CB Projects, detailing what they do
+            and a summary of services offered. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+          </p>
+          <p class="para-mid">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
         </div>
+      </section>
+
+      <div class="practice-gallery">
+        <img src="../images/about.jpg" alt="" />
+        <img src="../images/home_show1.jpg" alt="" />
+        <img src="../images/home_show2.jpg" alt="" />
+        <img src="../images/home_show3.jpg" alt="" />
       </div>
-      <div class="banner-container">
-        <div class="ban-txt-container">
+
+      <section class="practice-row" id="approach">
+        <h2 class="practice-heading">Approach</h2>
+        <div class="practice-text">
           <p class="para-mid">
-            Banner text 2 - This is some generic welcome text that introduces
-            the company and the website. It has to be around this length to
-            display nicely
+            This text describes how CB Projects works with clients, architects
+            and contractors, from early concept through to completion. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <p class="para-mid">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
           </p>
         </div>
-        <div class="img-container">
-          <img
-            class="banner-img"
-            src="../images/home_banner2.jpg"
-            alt="Example project 2"
-          />
-        </div>
-      </div>
-      <div class="display-container">
-        <div class="display-img-container">
-          <img src="../images/home_show1.jpg" alt="" class="display-img" />
-        </div>
-        <div class="display-img-container">
-          <img src="../images/home_show2.jpg" alt="" class="display-img" />
-        </div>
-        <div class="display-img-container">
-          <img src="../images/home_show3.jpg" alt="" class="display-img" />
-        </div>
-      </div>
+      </section>
+
       <div class="footer-container">
-        <div class="footer-text-container">
-          <h2 class="head-mid">This is the heading of the footer text</h2>
-          <p class="para-small">
-            This is some generic text to place at the bottom of the home page.
-            it summarises what the company is about & rounds everything off
-            nicely.
-          </p>
-        </div>
         <!-- include: footer -->
       </div>
     </div>

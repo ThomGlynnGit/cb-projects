@@ -6,6 +6,16 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+/* Hidden visually but still read by screen readers and search engines */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* text styles */
 
 .page-title {
@@ -23,10 +33,6 @@
 
 .head-mid {
   font-size: 1.5rem;
-}
-
-.footer-text {
-  font-size: 1.3rem;
 }
 
 .list-small > * {
@@ -187,66 +193,11 @@ a {
   gap: 80px;
 }
 
-/* Home banners */
-
-.banner-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0 0;
-}
-
-.img-container {
-  width: 60%;
-  aspect-ratio: 5 / 2;
-  overflow: hidden;
-  min-width: 60%;
-  max-height: 300px;
-}
-
-.banner-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.ban-txt-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-}
-
 /* Mobile site styles */
 
 @media (max-width: 900px) {
-  .banner-container,
-  .display-container {
-    flex-wrap: wrap;
-  }
-
-  .img-container,
-  .ban-txt-container,
-  .display-img-container {
-    width: 100%;
-  }
-
-  .ban-txt-container,
-  .display-img-container {
-    margin-top: 2rem;
-  }
-
-  .banner-container:nth-child(2) {
-    flex-direction: column-reverse;
-  }
-
   .content-container {
     gap: 30px;
-  }
-
-  .footer-text-container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 
   .head-container {
@@ -286,33 +237,7 @@ a {
   }
 }
 
-/* Display images */
-
-.display-container {
-  display: flex;
-  gap: 10px;
-}
-
-.display-img-container {
-  width: 100%;
-}
-
-.display-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0 0;
-}
-
 /* Footer */
-
-.footer-text-container {
-  text-align: center;
-  padding-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 
 .address-bar {
   background-color: rgb(252, 204, 127);
