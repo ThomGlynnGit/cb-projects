@@ -18,6 +18,30 @@
   font-weight: 400;
 }
 
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.contact-details div {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-details dt {
+  width: 4.5rem;
+  flex-shrink: 0;
+}
+
+.contact-details a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;

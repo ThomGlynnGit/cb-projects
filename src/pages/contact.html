@@ -11,6 +11,25 @@
         <div class="contact-head-container">
           <h1>Contact us</h1>
 
+          <dl class="contact-details">
+            <div>
+              <dt>Office</dt>
+              <dd>{{ settings.address }}</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd>
+                <a href="tel:{{ settings.phoneHref }}">{{ settings.phone }}</a>
+              </dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd>
+                <a href="mailto:{{ settings.email }}">{{ settings.email }}</a>
+              </dd>
+            </div>
+          </dl>
+
           <p class="para-small">
             Complete the form below to discuss a project or request further
             information.
