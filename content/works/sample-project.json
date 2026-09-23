@@ -1,7 +1,7 @@
 {
   "title": "Sample project",
   "summary": "A placeholder project to show how Selected Works pages look",
-  "image": "/images/home_banner1.jpg",
+  "image": "/images/home_banner1.webp",
   "location": "Brighton",
   "year": "2025",
   "client": "Client name",
@@ -10,8 +10,8 @@
   "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur nunc at faucibus malesuada. Integer vitae nibh vel risus faucibus tincidunt ut vitae lacus.",
   "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis gravida, orci sed posuere faucibus, ipsum erat luctus turpis, sed volutpat neque turpis sed velit.\n\nCurabitur scelerisque, ligula sit amet placerat volutpat, tortor orci fermentum nunc, sed cursus augue justo vel nisl.",
   "gallery": [
-    "/images/home_show1.jpg",
-    "/images/home_show2.jpg",
-    "/images/home_show3.jpg"
+    "/images/home_show1.webp",
+    "/images/home_show2.webp",
+    "/images/home_show3.webp"
   ]
 }

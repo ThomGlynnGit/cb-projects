@@ -19,6 +19,10 @@ export default {
     clean: true,
   },
   devtool: "eval-source-map",
+  // Only warn about large JS/CSS; photos are sized and compressed separately
+  performance: {
+    assetFilter: (file) => /\.(js|css)$/.test(file),
+  },
   devServer: {
     watchFiles: ["./src/**/*.html"],
   },
