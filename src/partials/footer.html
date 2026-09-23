@@ -1,4 +1,9 @@
 <div class="address-bar">
-  <h3 class="head-small">CB Projects - Structural Design</h3>
-  <p class="address">37 Brighton Lane, The Lanes, Brighton, BR45 6EQ</p>
+  <h3 class="head-small">{{ settings.name }} - {{ settings.tagline }}</h3>
+  <p class="address">{{ settings.address }}</p>
+  <p class="address">
+    <a href="mailto:{{ settings.email }}">{{ settings.email }}</a>
+    &middot;
+    <a href="tel:{{ settings.phoneHref }}">{{ settings.phone }}</a>
+  </p>
 </div>
