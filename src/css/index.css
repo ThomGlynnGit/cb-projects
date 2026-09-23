@@ -165,6 +165,10 @@ a {
   display: flex;
   flex-direction: column;
   gap: 80px;
+  /* At least full screen height, so short pages can push the footer down.
+     dvh allows for mobile browser toolbars; vh is the fallback. */
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Mobile site styles */
@@ -206,6 +210,12 @@ a {
 }
 
 /* Footer */
+
+/* Takes up any spare space above it, keeping it at the bottom of the screen
+   on short pages */
+.footer-container {
+  margin-top: auto;
+}
 
 .address-bar {
   background-color: rgb(252, 204, 127);
