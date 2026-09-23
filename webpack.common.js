@@ -2,6 +2,7 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { loadWorks } from "./tools/content.js";
 import { renderPage } from "./tools/templating.js";
 
 const pages = [
@@ -33,6 +34,14 @@ export default {
         new HtmlWebpackPlugin({
           filename: `${page}.html`,
           template: `./src/pages/${page}.html`,
+        }),
+    ),
+    // One page per project in content/works/, all from the same template
+    ...loadWorks().map(
+      ({ slug }) =>
+        new HtmlWebpackPlugin({
+          filename: `works/${slug}.html`,
+          template: `./src/pages/works/_template.html?slug=${slug}`,
         }),
     ),
     new MiniCssExtractPlugin({

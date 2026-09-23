@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ work.title }} | {{ settings.name }}</title>
+  </head>
+  <body>
+    <!-- include: header -->
+    <div class="content-container">
+      <div class="project-container">
+        <div class="project-hero">
+          <img
+            src="<!-- render: work-hero -->"
+            alt="{{ work.title }}"
+            class="project-hero-img"
+          />
+        </div>
+
+        <div class="project-header">
+          <h1>{{ work.title }}</h1>
+          <p class="para-mid">{{ work.summary }}</p>
+        </div>
+
+        <dl class="project-facts"><!-- render: work-facts --></dl>
+
+        <div class="project-overview">
+          <h2 class="head-mid">Overview</h2>
+          <!-- render: work-overview -->
+        </div>
+
+        <div class="project-details">
+          <h2 class="head-mid">Project details</h2>
+          <!-- render: work-details -->
+        </div>
+
+        <div class="project-gallery"><!-- render: work-gallery --></div>
+
+        <div class="project-back">
+          <a href="{{ root }}works.html" class="back-button">
+            &larr; Back to Selected Works
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <!-- include: footer -->
+      </div>
+    </div>
+  </body>
+</html>

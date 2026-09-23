@@ -98,6 +98,25 @@
   font-weight: 400;
 }
 
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.project-facts dt {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-facts dd {
+  font-size: 1.1rem;
+}
+
 .project-overview,
 .project-details {
   display: flex;
