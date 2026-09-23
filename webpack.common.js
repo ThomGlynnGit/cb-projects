@@ -13,7 +13,8 @@ export default {
     app: "./src/js/index.js",
   },
   output: {
-    filename: "main.js",
+    // Content hashes in names, so browsers never mix old and new files
+    filename: "[name].[contenthash:8].js",
     path: path.resolve(import.meta.dirname, "dist"),
     clean: true,
   },
@@ -42,7 +43,7 @@ export default {
       patterns: [{ from: "src/admin", to: "admin" }],
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "[name].[contenthash:8].css",
     }),
   ],
   module: {
