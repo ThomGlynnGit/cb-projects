@@ -11,10 +11,12 @@
 
 :root {
   --page-background: #fefbf6;
+  --text-colour: #3d1506;
 }
 
 body {
   background-color: var(--page-background);
+  color: var(--text-colour);
 }
 
 * {
@@ -112,7 +114,7 @@ html {
   width: fit-content;
   white-space: nowrap;
   font-size: 1rem;
-  color: black;
+  color: var(--text-colour);
   cursor: pointer;
 }
 
@@ -140,7 +142,7 @@ html {
   display: block;
   width: 1.5rem;
   height: 2px;
-  background-color: black;
+  background-color: var(--text-colour);
   transition: transform 0.2s ease;
 }
 
@@ -176,7 +178,7 @@ html {
 }
 
 a {
-  color: black;
+  color: var(--text-colour);
   text-decoration: none;
 }
 
@@ -221,7 +223,7 @@ a {
     gap: 1.2rem;
     padding: 1rem 1rem 1.5rem;
     background-color: var(--page-background);
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--text-colour);
   }
 
   .nav-menu-toggle[aria-expanded="true"] + .nav-buttons {

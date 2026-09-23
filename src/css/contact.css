@@ -38,8 +38,9 @@
 .form-field textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid black;
+  border: 1px solid var(--text-colour);
   font-size: 1rem;
+  color: var(--text-colour);
   background-color: white;
 }
 
@@ -50,16 +51,16 @@
 
 .form-field input:focus,
 .form-field textarea:focus {
-  outline: 2px solid black;
+  outline: 2px solid var(--text-colour);
   outline-offset: 2px;
 }
 
 .form-submit {
   width: fit-content;
   padding: 12px 24px;
-  border: 2px solid black;
-  background-color: black;
-  color: white;
+  border: 2px solid var(--text-colour);
+  background-color: var(--text-colour);
+  color: var(--page-background);
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
@@ -67,7 +68,7 @@
 
 .form-submit:hover {
   background-color: var(--page-background);
-  color: black;
+  color: var(--text-colour);
 }
 
 .form-submit:disabled {

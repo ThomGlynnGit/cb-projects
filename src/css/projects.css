@@ -103,8 +103,8 @@
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
   padding: 20px 0;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid var(--text-colour);
+  border-bottom: 1px solid var(--text-colour);
 }
 
 .project-facts dt {
@@ -144,15 +144,15 @@
 .back-button {
   display: inline-block;
   padding: 12px 24px;
-  border: 2px solid black;
-  color: black;
+  border: 2px solid var(--text-colour);
+  color: var(--text-colour);
   text-decoration: none;
   transition: 0.3s;
 }
 
 .back-button:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--text-colour);
+  color: var(--page-background);
   text-decoration: none;
 }
 
