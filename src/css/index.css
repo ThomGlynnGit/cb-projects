@@ -243,8 +243,17 @@ a {
   margin-top: auto;
 }
 
+.address-bar a {
+  color: inherit;
+}
+
+.address-bar a:hover {
+  text-decoration: underline;
+}
+
 .address-bar {
-  background-color: rgb(252, 204, 127);
+  background-color: var(--text-colour);
+  color: var(--page-background);
   padding: 1.4rem;
   display: flex;
   flex-direction: column;
