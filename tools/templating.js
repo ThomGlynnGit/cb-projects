@@ -6,10 +6,11 @@
 //                                        site root ("./" or "../")
 //                             settings - content/settings.json
 //                             work     - the project, on works/_template.html
+//                             works, sketches - content/works/, content/sketchbook/
 //   <!-- render: name -->   inserts HTML built by one of the renderers below
 import path from "node:path";
 import fs from "node:fs";
-import { loadSettings, loadWorks } from "./content.js";
+import { loadSettings, loadSketches, loadWorks } from "./content.js";
 
 const srcDir = path.resolve(import.meta.dirname, "../src");
 const pagesDir = path.join(srcDir, "pages");
@@ -80,6 +81,19 @@ const renderers = {
           `<img src="${image(src)}" alt="${escapeHtml(work.title)}" class="gallery-img" />`,
       )
       .join(""),
+
+  "sketchbook-grid": ({ sketches, image }) =>
+    sketches.length
+      ? sketches
+          .map(
+            (sketch) => `
+              <figure class="sketch">
+                <img src="${image(sketch.image)}" alt="${escapeHtml(sketch.caption || "Sketch")}" />
+                ${sketch.caption ? `<figcaption>${escapeHtml(sketch.caption)}</figcaption>` : ""}
+              </figure>`,
+          )
+          .join("")
+      : `<p class="para-small">Sketches coming soon.</p>`,
 };
 
 export function renderPage(content, loaderContext) {
@@ -97,6 +111,7 @@ export function renderPage(content, loaderContext) {
     settings: loadSettings(loaderContext),
     works,
     work: works.find((work) => work.slug === slug),
+    sketches: loadSketches(loaderContext),
     // Image fields hold site paths like "/images/uploads/x.jpg"; make them
     // relative to this template so webpack bundles them.
     image: (src) => {

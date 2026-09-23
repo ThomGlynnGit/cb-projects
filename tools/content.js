@@ -18,10 +18,9 @@ export function loadSettings(loaderContext) {
   return { ...settings, phoneHref: settings.phone.replace(/[^\d+]/g, "") };
 }
 
-// Each file in content/works/ is one project; its filename is the page slug.
-// Newest first, then alphabetical.
-export function loadWorks(loaderContext) {
-  const dir = path.join(contentDir, "works");
+// Reads every JSON file in content/<name>/, adding its filename as `slug`.
+function loadCollection(name, loaderContext) {
+  const dir = path.join(contentDir, name);
   if (!fs.existsSync(dir)) return [];
 
   loaderContext?.addContextDependency(dir);
@@ -32,10 +31,25 @@ export function loadWorks(loaderContext) {
     .map((file) => ({
       slug: path.basename(file, ".json"),
       ...readJson(path.join(dir, file), loaderContext),
-    }))
-    .sort(
-      (a, b) =>
-        String(b.year).localeCompare(String(a.year)) ||
-        a.title.localeCompare(b.title),
-    );
+    }));
+}
+
+// Each file in content/works/ is one project; its filename is the page slug.
+// Newest first, then alphabetical.
+export function loadWorks(loaderContext) {
+  return loadCollection("works", loaderContext).sort(
+    (a, b) =>
+      String(b.year).localeCompare(String(a.year)) ||
+      a.title.localeCompare(b.title),
+  );
+}
+
+// Each file in content/sketchbook/ is one sketch. Lowest order first; sketches
+// without an order go last.
+export function loadSketches(loaderContext) {
+  return loadCollection("sketchbook", loaderContext).sort(
+    (a, b) =>
+      (a.order ?? Infinity) - (b.order ?? Infinity) ||
+      a.slug.localeCompare(b.slug),
+  );
 }

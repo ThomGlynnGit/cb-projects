@@ -13,3 +13,24 @@
   gap: 8px;
   max-width: 800px;
 }
+
+/* Masonry-style columns so sketches keep their own proportions */
+.sketchbook-grid {
+  columns: 3 260px;
+  column-gap: 1.4rem;
+}
+
+.sketch {
+  break-inside: avoid;
+  margin-bottom: 1.4rem;
+}
+
+.sketch img {
+  display: block;
+  width: 100%;
+}
+
+.sketch figcaption {
+  padding-top: 0.5rem;
+  font-size: 0.95rem;
+}
