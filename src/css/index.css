@@ -116,10 +116,63 @@
   display: flex;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (min-width: 901px) {
   .nav-dropdown:hover .nav-dropdown-menu {
     display: flex;
   }
+}
+
+/* Mobile menu button (hamburger that turns into a cross when open) */
+
+.nav-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-menu-icon,
+.nav-menu-icon::before,
+.nav-menu-icon::after {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.2s ease;
+}
+
+.nav-menu-icon {
+  position: relative;
+}
+
+.nav-menu-icon::before,
+.nav-menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-menu-icon::before {
+  top: -7px;
+}
+
+.nav-menu-icon::after {
+  top: 7px;
+}
+
+.nav-menu-toggle[aria-expanded="true"] .nav-menu-icon {
+  background-color: transparent;
+}
+
+.nav-menu-toggle[aria-expanded="true"] .nav-menu-icon::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-menu-toggle[aria-expanded="true"] .nav-menu-icon::after {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 a {
@@ -200,24 +253,36 @@ a {
     padding: 0.8rem 1rem;
   }
 
-  .nav-container {
-    align-items: flex-start;
-    gap: 1rem;
+  .nav-menu-toggle {
+    display: flex;
   }
 
+  /* Menu panel drops down below the fixed header */
   .nav-buttons {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.6rem 1.2rem;
-    width: auto;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem 1rem 1.5rem;
+    background-color: white;
+    border-bottom: 1px solid black;
+  }
+
+  .nav-menu-toggle[aria-expanded="true"] + .nav-buttons {
+    display: flex;
   }
 
   .nav-btn {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
-  .logo {
-    flex-shrink: 0;
+  /* Practice expands inline within the panel */
+  .nav-dropdown-menu {
+    position: static;
+    padding: 1rem 0 0 1rem;
   }
 }
 

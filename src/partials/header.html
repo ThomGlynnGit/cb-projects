@@ -1,7 +1,16 @@
 <div class="head-container">
   <nav class="nav-container" aria-label="Main">
     <a href="{{root}}index.html" class="logo">CB<br />Projects</a>
-    <ul class="nav-buttons">
+    <button
+      type="button"
+      class="nav-menu-toggle"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      aria-label="Menu"
+    >
+      <span class="nav-menu-icon"></span>
+    </button>
+    <ul class="nav-buttons" id="nav-menu">
       <li class="nav-dropdown">
         <button
           type="button"
