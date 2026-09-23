@@ -105,7 +105,7 @@ html {
 
 .logo img {
   display: block;
-  height: 50px;
+  height: 44px;
   width: auto;
 }
 
@@ -183,7 +183,7 @@ a {
 }
 
 .content-container {
-  padding-top: 90px; /* accounts for fixed header */
+  padding-top: 80px; /* accounts for fixed header */
   display: flex;
   flex-direction: column;
   gap: 80px;
