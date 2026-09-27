@@ -141,3 +141,6 @@ vite.config.ts.timestamp-*
 # Original brand source files (the site uses optimised copies)
 src/fonts/Inter/
 src/images/brand/WIP logo/
+
+# Site build used by the Jest tests
+.test-build/

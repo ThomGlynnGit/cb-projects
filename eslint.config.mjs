@@ -3,10 +3,14 @@ import globals from "globals";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(["dist/"]),
+  globalIgnores(["dist/", ".test-build/"]),
   {
-    files: ["webpack.*.js"],
+    files: ["webpack.*.js", "jest.config.js", "tools/**/*.js"],
     languageOptions: { globals: globals.node },
+  },
+  {
+    files: ["tests/**/*.js"],
+    languageOptions: { globals: { ...globals.node, ...globals.jest } },
   },
   {
     files: ["**/*.{js,mjs,cjs}"],
