@@ -12,6 +12,7 @@
 :root {
   --page-background: #fefbf6;
   --text-colour: #3d1506;
+  --logo-brown: #571902; /* the brown in the logo */
 }
 
 body {
@@ -29,7 +30,7 @@ body {
 
 /* Stop links to page sections (e.g. #about) landing under the fixed header */
 html {
-  scroll-padding-top: 100px;
+  scroll-padding-top: 120px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -105,7 +106,7 @@ html {
 
 .logo img {
   display: block;
-  height: 44px;
+  height: 66px;
   width: auto;
 }
 
@@ -189,7 +190,7 @@ a {
 }
 
 .content-container {
-  padding-top: 80px; /* accounts for fixed header */
+  padding-top: 110px; /* accounts for fixed header */
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -211,7 +212,7 @@ a {
   }
 
   .logo img {
-    height: 40px;
+    height: 60px;
   }
 
   .nav-menu-toggle {
@@ -258,7 +259,7 @@ a {
 }
 
 .address-bar {
-  background-color: var(--text-colour);
+  background-color: var(--logo-brown);
   color: var(--page-background);
   padding: 1.4rem;
   display: flex;

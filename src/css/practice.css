@@ -15,8 +15,12 @@
   gap: 1rem;
 }
 
-.practice-intro {
+.practice-top {
   padding-top: 2rem;
+}
+
+.practice-intro {
+  gap: 1.5rem;
   font-size: 1.8rem;
   line-height: 1.35;
 }
@@ -27,8 +31,9 @@
   font-size: 1.3rem;
 }
 
+/* Slightly larger than the body paragraphs (1.3rem) */
 .practice-heading {
-  font-size: 1rem;
+  font-size: 1.45rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.05em;
