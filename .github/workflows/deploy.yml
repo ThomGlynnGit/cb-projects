@@ -1,5 +1,5 @@
 # Builds the site and publishes it to GitHub Pages on every push to main,
-# including content saved through the CMS. If lint or the build fails,
+# including content saved through the CMS. If lint, tests or the build fail,
 # nothing is published and the live site stays as it was.
 name: Deploy to GitHub Pages
 
@@ -31,6 +31,7 @@ jobs:
 
       - run: npm ci
       - run: npm run lint
+      - run: npm test
       - run: npm run build
 
       - uses: actions/configure-pages@v6
