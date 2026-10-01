@@ -63,17 +63,18 @@ describe("The Practice (index.html)", () => {
     expect(gallery.querySelectorAll("img")).toHaveLength(4);
   });
 
-  test("has the Approach section with five bold 'We are' paragraphs", () => {
+  test("has the Approach section with six 'We are' paragraphs", () => {
     const approach = doc.getElementById("approach");
     expect(text(approach.querySelector(".practice-heading"))).toBe("Approach");
     const paras = approach.querySelectorAll(".practice-text p");
-    expect(paras).toHaveLength(5);
+    expect(paras).toHaveLength(6);
     expect(texts(approach.querySelectorAll("strong"))).toEqual([
-      "We are passionate",
-      "We are practical",
-      "We are problem",
-      "We are collaborative",
-      "We are responsive",
+      "passionate",
+      "practical",
+      "problem solvers",
+      "personable",
+      "collaborative",
+      "responsive",
     ]);
     for (const p of paras) {
       expect(p.firstElementChild.tagName).toBe("STRONG");

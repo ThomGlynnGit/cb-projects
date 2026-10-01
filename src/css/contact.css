@@ -42,10 +42,12 @@
   overflow-wrap: anywhere;
 }
 
+/* Left half of the page on desktop; full width below 900px */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 50%;
 }
 
 .form-field {
@@ -113,6 +115,10 @@
 @media (max-width: 900px) {
   .contact-container {
     gap: 20px;
+  }
+
+  .contact-form {
+    width: 100%;
   }
 
   .contact-head-container h1 {
